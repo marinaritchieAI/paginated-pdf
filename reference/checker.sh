@@ -26,7 +26,11 @@ pass() { echo "ok    $1"; }
 skip() { echo "skip  $1"; }
 
 # ---------------------------------------------------------------- sheets
-sheets=$(grep -o 'class="sheet"' "$HTML" | wc -l | tr -d ' ')
+# Count real opening tags only. A document that documents this pattern will quote
+# `class="sheet"` inside escaped code samples (&lt;div class="sheet"&gt;); those have
+# no literal '<' so they are not counted.
+sheets=$(grep -oE '<[a-zA-Z][^>]*class="[^"]*"' "$HTML" \
+         | grep -cE 'class="([^"]* )?sheet( [^"]*)?"')
 if [ "$sheets" -eq 0 ]; then
   fail "no elements with class=\"sheet\" found; this is not a paginated document"
   exit 1
