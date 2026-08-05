@@ -1,11 +1,13 @@
 ---
 name: paginated-pdf
-description: Build a self-contained HTML document that paginates identically on screen and in PDF, using a one-sheet-per-page model with running headers and footers, then render and verify it. Use whenever the user wants a PDF, a printable document, a proposal, report, catalogue, guide, one-pager, brochure or handout produced from HTML or markdown, or when an existing HTML document converts to PDF badly with wrong page breaks, floating footers, missing background colours or a blank last page.
+description: Use whenever the user wants a PDF or printable document, a proposal, report, catalogue, guide, one-pager, brochure or handout produced from HTML or markdown, or when an existing HTML document converts to PDF or print badly, with wrong page breaks, floating footers, repeated or wrong page numbers, missing background colours, a heading stranded at a page bottom, or a blank last page.
 ---
 
 # Paginated PDF
 
-Produce documents as a single self-contained HTML file that paginates identically on screen and in PDF, then verify the PDF before calling it done.
+This skill solves one problem: positioning content on A4 pages so the document looks right in PDF and in print. HTML is the medium because it structures and presents information better than a rigid word processor file can; this skill's only job is to control where that content falls on each page. Produce the document as a single self-contained HTML file that paginates identically on screen and in PDF, then verify the PDF before calling it done.
+
+Out of scope: brand systems. The four CSS variables in step 2 are the only styling hook. Palettes, type systems and logo treatments are a separate concern and a separate skill; do not add them here.
 
 Do not use a PDF library. Do not use `position:fixed` headers. Do not let the browser print its own header or footer.
 

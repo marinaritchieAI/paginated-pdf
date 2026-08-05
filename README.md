@@ -1,6 +1,6 @@
 # paginated-pdf
 
-A skill for Claude that builds HTML documents which convert to PDF cleanly, every time.
+A skill for Claude that solves one problem: positioning content on A4 pages so the document comes out right in PDF and in print, every time. HTML does the rest, because it structures and presents information better than a rigid word processor file can.
 
 Models write good-looking HTML quickly. That HTML usually converts to PDF badly:
 page numbers repeat, the footer floats halfway up the page, background colours
@@ -12,7 +12,8 @@ gives screen and PDF a single shared margin system, and a checker script that
 proves the output before you send it.
 
 Brand-neutral. Swap the four colour variables at the top of the CSS and it works
-for any business.
+for any business. Brand systems, palettes and type treatments are a separate
+concern; this skill only decides where content falls on the page.
 
 ## What is in the box
 
